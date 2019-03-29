@@ -88,11 +88,11 @@ open class LocationItem: NSObject, NSCoding {
     }
     
     
-    open override var hashValue: Int {
+    open override var hash: Int {
         if let coordinate = coordinate {
             return "\(coordinate.latitude), \(coordinate.longitude)".hashValue
         } else {
-            return mapItem.name?.hashValue ?? "".hashValue
+            return mapItem.name?.hash ?? "".hashValue
         }
     }
     
